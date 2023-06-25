@@ -1,3 +1,12 @@
+$(document).ready(function(){
+    $("#input").on("keydown", function(e){
+        if (e.keyCode === 13) {
+            e.preventDefault();
+            newItem();
+        }
+    })
+});
+
 function newItem(){
     // 1. Adding a new item to the list of items
     let li = $("<li></li>");
