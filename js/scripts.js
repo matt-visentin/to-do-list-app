@@ -12,7 +12,7 @@ function newItem(){
 
     // // 2. Crossing out an item from the list of items
 
-    li.on("dblclick", function crossOut(){
+    li.on("click", function crossOut(){
         li.toggleClass("strike");
     });
 
@@ -20,10 +20,12 @@ function newItem(){
     let crossOutButton = $("<crossOutButton></crossOutButton>");
     crossOutButton.append(document.createTextNode("X"));
     li.append(crossOutButton);
-    crossOutButton.on("click", function deleteListItem(){
-        li.addClass(".delete");
+    
+    crossOutButton.on("dblclick", function deleteListItem(){
+        li.addClass("delete");
     })
 
     // // 4. Reordening the items
     $("#list").sortable();
+    
 }
